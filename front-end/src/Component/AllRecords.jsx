@@ -11,17 +11,20 @@ import {
 import { getRecords, deleteRecord } from "../Service/api";
 import { Link } from "react-router-dom";
 import QRCode from "qrcode";
+import { green } from '@mui/material/colors';
 
 const useStyles = makeStyles({
   table: {
-    width: "90%",
+    width: "80%",
     margin: "50px 0 0 50px",
+    borderRadius:"50px"
   },
   thead: {
     "& > *": {
       fontSize: 20,
-      background: "#000000",
+      background: "red",
       color: "#FFFFFF",
+      borderRadius: "20px"
     },
   },
   row: {
@@ -67,6 +70,7 @@ const AllData = () => {
           <TableCell>Id</TableCell>
           <TableCell>Category</TableCell>
           <TableCell>Description</TableCell>
+          <TableCell>QR & More</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -77,17 +81,14 @@ const AllData = () => {
             <TableCell>{detail.desc}</TableCell>
             <TableCell>
               <Button
-                className={classes.btn}
+                // className={classes.btn}
+                style={{ backgroundColor: green[500] }}
                 variant="contained"
-                color="success"
                 onClick={() => generateQrCode(detail._id)}
+                download
+                href={imageUrl} 
               >
                 QR Code
-                <a href={imageUrl} download>
-                  <button onClick={() => generateQrCode(detail._id)} download>
-                    Download
-                  </button>
-                </a>
               </Button>{" "}
               <Button
                 color="primary"
@@ -98,7 +99,6 @@ const AllData = () => {
               >
                 Edit
               </Button>{" "}
-              {/* change it to user.id to use JSON Server */}
               <Button
                 color="secondary"
                 variant="contained"

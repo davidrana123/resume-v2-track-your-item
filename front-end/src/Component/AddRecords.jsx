@@ -42,6 +42,7 @@ const AddData = () => {
 
   const addDetails = async () => {
     await addRecords(data);
+    console.log("data ka naam")
     history.push("/");
   };
 

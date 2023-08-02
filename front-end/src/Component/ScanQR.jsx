@@ -7,7 +7,7 @@ import {
   Grid,
   Button,
 } from "@material-ui/core";
-import QrReader from "react-qr-reader";
+import {QrReader} from "react-qr-reader";
 
 function Scan() {
   const [scanResultFile, setScanResultFile] = useState("");

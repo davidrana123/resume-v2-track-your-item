@@ -17,7 +17,8 @@ app.use("/info", ItemRouter);
 app.use("/record", Routes);
 
 const URL =
-  "mongodb+srv://MERN-STACK:4g8fJ790cyf5CsBV@cluster0.4s7rg.mongodb.net/MERN-STACK";
+  // "mongodb+srv://MERN-STACK:4g8fJ790cyf5CsBV@cluster0.4s7rg.mongodb.net/MERN-STACK";
+  "mongodb+srv://davidrana123:David@cluster0.wbfhmqz.mongodb.net/?retryWrites=true&w=majority";
 
 const PORT = process.env.PORT || "8080";
 
