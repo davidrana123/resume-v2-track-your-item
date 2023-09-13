@@ -11,6 +11,7 @@ import AddRecords from '../../Component/AddRecords';
 import AddItem from '../../Component/AddItem';
 import EditRecords from '../../Component/EditRecords';
 import { NavLink } from "react-router-dom";
+import DsaTable from '../../Component/Dsa_expriment/DsaTable';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -64,15 +65,16 @@ export default function BasicTabs() {
             flexGrow: 1,
             maxWidth: { xs: 1600, sm: 1600 },
             bgcolor: 'background.paper',
-            marginLeft: '36vw'
+            marginLeft: '10px'
           }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="scrollable"
         scrollButtons
         allowScrollButtonsMobile>
-          <Tab style={{ margin:'20px' }} className='space-between' label="AllRecords" {...a11yProps(0)} />
-          <Tab style={{ margin:'20px' }} className='space-between' label="AddRecords" {...a11yProps(1)} />
-          <Tab style={{ margin:'20px' }} className='space-between' label="AddItem" {...a11yProps(2)} />
-          <Tab style={{ margin:'20px' }} className='space-between' label="EditRecords" {...a11yProps(3)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="All Records" {...a11yProps(0)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="Add Records" {...a11yProps(1)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="Add Item" {...a11yProps(2)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="Edit Records" {...a11yProps(3)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="DSA Table" {...a11yProps(4)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -86,6 +88,9 @@ export default function BasicTabs() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <EditRecords />
+      </TabPanel>
+      <TabPanel value={value} index={4}>
+        <DsaTable />
       </TabPanel>
       </Box>
     </Card>
