@@ -11,6 +11,7 @@ import ScanQR from "../Component/ScanQR";
 import MuiNavBar from '../Layouts/NavBar/index';
 import Home from '../Page/Home/index';
 import oldversion1 from '../Page/OldVersion/oldversion1';
+import LandingPage from '../Component/Home/Home';
 
 function index() {
   return (
@@ -18,7 +19,8 @@ function index() {
     {/* <NavBar /> */}
     <MuiNavBar  FontFamilyType={'monospace'} />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/home" component={Home} />
         <Route exact path="/addRecords" component={AddRecords} />
         <Route exact path="/add" component={Records} />
         <Route exact path="/list" component={RecordList} />

@@ -1,0 +1,13 @@
+.BtnStyle{
+    padding: 10px 20px;
+    font-size: 5rem; /* Increase the font size to make the button larger */
+    background-color: black;
+    color: wheat;
+}
+
+.center-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}

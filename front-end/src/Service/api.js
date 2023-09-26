@@ -22,7 +22,7 @@ export const editRecords = async (id, user) => {
 };
 
 export const getRecordById = async (id, user) => {
-  return await axios.get(`${usersUrl}/${id}`, user);
+  return await axios.get(`${usersUrl}/${id}`);
 };
 
 //itme api
