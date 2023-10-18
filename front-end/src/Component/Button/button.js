@@ -2,7 +2,6 @@ import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import { useHistory } from "react-router-dom"
-import OldNavBar from '../../Component/NavBar';
 
 const divStyle = {margin: 'auto', position:'absolute', top:'20%', left:'25%'}
 const btnstyle = {width:'10rem' , height:'4rem', borderRadius: '10px',}

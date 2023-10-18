@@ -12,6 +12,11 @@ import MuiNavBar from '../Layouts/NavBar/index';
 import Home from '../Page/Home/index';
 import oldversion1 from '../Page/OldVersion/oldversion1';
 import LandingPage from '../Component/Home/Home';
+import DsaTable from '../Component/Dsa_expriment/DsaTable';
+import InterviewHome from '../Component/Home/InterviewHome';
+import ReactInterview from '../Component/ReactPractics/ReactInterview';
+import ClassComponent from '../Component/ReactPractics/ClassComponent';
+import Authentication from '../Component/Authentication/AuthenticationComp';
 
 function index() {
   return (
@@ -20,6 +25,11 @@ function index() {
     <MuiNavBar  FontFamilyType={'monospace'} />
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/interviewSelection" component={InterviewHome} />
+        <Route exact path="/classComponent" component={ClassComponent} />
+        <Route exact path="/authentication" component={Authentication} />
+        <Route exact path="/reactInterview" component={ReactInterview} />
+        <Route exact path="/dsaTable" component={DsaTable} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/addRecords" component={AddRecords} />
         <Route exact path="/add" component={Records} />

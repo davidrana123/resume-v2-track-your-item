@@ -1,18 +1,19 @@
-import { Button } from '@material-ui/core'
-import React from 'react'
-import './HomeStyle.css';
-import { useHistory } from "react-router-dom";
+import React from 'react';
+import CommonButton from '../CommanBtn/CommonButton';
+import { useHistory } from 'react-router-dom';
 
 function Home() {
+  let router = useHistory();
 
-    let router = useHistory();
   return (
-    
-    <div className='center-container'>
-    <Button onClick={() => router.push("/home")} size="large" color="success" className='BtnStyle' variant="contained">Start</Button>
+    <div className="center-container">
+      <div style={{marginRight:'1rem'}}>
+      <CommonButton label="App" onClick={() => router.push('/home')} /> </div>
+      <div style={{marginLeft:'1rem'}}>
+      <CommonButton label="Interview" onClick={() => router.push('/interviewSelection')} />
+      </div>
     </div>
-
-  )
+  );
 }
 
-export default Home
+export default Home;

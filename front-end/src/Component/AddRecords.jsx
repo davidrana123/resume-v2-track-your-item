@@ -30,7 +30,6 @@ const useStyles = makeStyles({
 
 const AddData = () => {
   const [data, setData] = useState(initialValue);
-  const [value, setValue] = useState(2);
   const { cat, desc } = data;
   const classes = useStyles();
   let history = useHistory();
@@ -53,7 +52,6 @@ const AddData = () => {
     <FormGroup className={classes.container}>
       <Typography variant="h4">Add About Record</Typography>
       <Select
-        value={data}
         displayEmpty
         onChange={onValueChange}
         name="cat"

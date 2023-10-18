@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
 import {
-  Table,
-  TableHead,
-  TableCell,
-  TableRow,
-  TableBody,
   Button,
   makeStyles,
   Select,
@@ -16,9 +11,6 @@ import {
 import { getRecords, deleteRecord, addRecords, addItems } from "../Service/api";
 import QRCode from "qrcode";
 import { useHistory } from "react-router-dom";
-import RecordList from "./RecordList";
-import AddItem from "./AddItem";
-
 //new data
 const initialValue = {
   cat: "",
@@ -48,14 +40,8 @@ const useStyles = makeStyles({
 
 const AllResult = () => {
   const [Details, setDetails] = useState([]);
-  const [list, setList] = useState([]);
   const classes = useStyles();
-  const [imageUrl, setImageUrl] = useState("");
-
-  ///new data
   const [data, setData] = useState(initialValue);
-  const [value, setValue] = useState(2);
-  const [save, setSave] = useState([]);
   const { cat, desc } = data;
   let history = useHistory();
   console.log(data);
@@ -73,8 +59,6 @@ const AllResult = () => {
   };
   console.log(addDetails);
 
-  const fo = "Item";
-  const so = "Location";
 
   /// end new data
 
@@ -87,27 +71,26 @@ const AllResult = () => {
     setDetails(response.data);
   };
 
-  const deleteDatas = async (id) => {
-    await deleteRecord(id);
-    getAllData();
-  };
+  // const deleteDatas = async (id) => {
+  //   await deleteRecord(id);
+  //   getAllData();
+  // };
 
-  const generateQrCode = async (id) => {
-    try {
-      const response = await QRCode.toDataURL(id.toString());
-      console.log(id);
-      setImageUrl(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // const generateQrCode = async (id) => {
+  //   try {
+  //     const response = await QRCode.toDataURL(id.toString());
+  //     console.log(id);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   //mui
-  const [age, setAge] = useState("");
+  // const [age, setAge] = useState("");
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setAge(event.target.value);
+  // };
   //end
 
   return (

@@ -7,8 +7,6 @@ import {
   Button,
   makeStyles,
   Typography,
-  Select,
-  MenuItem,
 } from "@material-ui/core";
 import { addRecords } from "../Service/api";
 import { useHistory } from "react-router-dom";
@@ -30,7 +28,6 @@ const useStyles = makeStyles({
 
 const AddItem = () => {
   const [data, setData] = useState(initialValue);
-  const [value, setValue] = useState(2);
   const { cat, desc } = data;
   const classes = useStyles();
   let history = useHistory();
@@ -44,9 +41,6 @@ const AddItem = () => {
     await addRecords(data);
     history.push("/list");
   };
-
-  const fo = "Item";
-  const so = "Location";
 
   return (
     <FormGroup className={classes.container}>
