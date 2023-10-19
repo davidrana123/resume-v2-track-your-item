@@ -1,38 +1,25 @@
 import React, { useState, useMemo } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
+import {loginHandler} from '../../Service/auth';
+import { useHistory } from 'react-router-dom';
 
 export default function Login() {
-  const [login, setLogin] = useState({ name: '', password: '' });
+  let router = useHistory();
+  const [login, setLogin] = useState({ email: '', password: '' });
 
   const fieldValue = (e) => setLogin({ ...login, [e.target.name]: e.target.value });
 
-  const submit = () => {
-    console.log(login);
+  const submit = async() => {
+    try{
+      const res = await loginHandler(login)
+      localStorage.setItem('token', res.data.token)
+      router.push('/authHome')
+    }catch(error){
+      console.log(error)
+    }
   };
-
-  const nameField = useMemo(() => (
-    <TextField
-      id="outlined-basic"
-      name="name"
-      value={login.name}
-      onChange={(e) => fieldValue(e)}
-      label="Name"
-      variant="outlined"
-    />
-  ), [login.name]);
-
-  const passwordField = useMemo(() => (
-    <TextField
-      id="outlined-basic"
-      name="password"
-      value={login.password}
-      onChange={(e) => fieldValue(e)}
-      label="Password"
-      variant="outlined"
-    />
-  ), [login.password]);
 
   return (
     <Box
@@ -47,8 +34,24 @@ export default function Login() {
       noValidate
       autoComplete="off"
     >
-      {nameField}
-      {passwordField}
+      <Button variant="outlined" onClick={() => router.push('/signup')} >Sign-up</Button>
+      <Typography>Login-Page</Typography>
+       <TextField
+      id="outlined-basic"
+      name="email"
+      value={login.email}
+      onChange={(e) => fieldValue(e)}
+      label="Email"
+      variant="outlined"
+    />
+      <TextField
+      id="outlined-basic"
+      name="password"
+      value={login.password}
+      onChange={(e) => fieldValue(e)}
+      label="Password"
+      variant="outlined"
+    />
       <Button variant="outlined" onClick={submit}>
         Submit
       </Button>

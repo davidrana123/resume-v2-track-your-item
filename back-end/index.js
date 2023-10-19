@@ -6,6 +6,8 @@ import cors from "cors";
 
 import ItemRouter from "./server/ItemRoute.js";
 import Routes from "./server/route.js";
+import Auth from "./server/authRouter.js";
+import secureRoutes from './server/secureRoutes.js';
 
 const app = express();
 
@@ -15,6 +17,8 @@ app.use(cors());
 
 app.use("/info", ItemRouter);
 app.use("/record", Routes);
+app.use("/auth", Auth);
+app.use('/secure', secureRoutes);
 
 const URL =
   // "mongodb+srv://MERN-STACK:4g8fJ790cyf5CsBV@cluster0.4s7rg.mongodb.net/MERN-STACK";

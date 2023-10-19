@@ -17,14 +17,19 @@ import InterviewHome from '../Component/Home/InterviewHome';
 import ReactInterview from '../Component/ReactPractics/ReactInterview';
 import ClassComponent from '../Component/ReactPractics/ClassComponent';
 import Authentication from '../Component/Authentication/AuthenticationComp';
+import AuthHome from '../Component/Authentication/AuthHome';
+import SignUp from '../Component/Authentication/SignUp';
+import Login from '../Component/Authentication/Login';
 
 function index() {
   return (
     <BrowserRouter>
-    {/* <NavBar /> */}
     <MuiNavBar  FontFamilyType={'monospace'} />
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/authHome" component={AuthHome} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
         <Route exact path="/interviewSelection" component={InterviewHome} />
         <Route exact path="/classComponent" component={ClassComponent} />
         <Route exact path="/authentication" component={Authentication} />
