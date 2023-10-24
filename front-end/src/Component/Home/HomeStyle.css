@@ -4,11 +4,3 @@
     width: 500px; /* Adjust the width as needed */
   }
   
-  .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: rgb(8, 2, 31);
-  }
-  

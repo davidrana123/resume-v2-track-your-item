@@ -6,6 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-color: #3FEEE6; */
+  margin: 0;
+  padding: 0;
+  background-image: url('Static/bg-img.jpg'); /* Replace with the actual path to your background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* This makes the background image fixed */
 }
 
 code {

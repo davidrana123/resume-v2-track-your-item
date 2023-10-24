@@ -22,7 +22,8 @@ function AuthenticationComp() {
 
   return (
     <>
-    { isAuthenticated ? <AuthHome /> : <Login />  }
+    <AuthHome />
+    {/* { isAuthenticated ? <AuthHome /> : <Login />  } */}
     </>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import CommonButton from '../CommanBtn/CommonButton';
 import { useHistory } from 'react-router-dom';
+import '../../Component/Home/HomeStyle.css'
 
 function Home() {
   let router = useHistory();
