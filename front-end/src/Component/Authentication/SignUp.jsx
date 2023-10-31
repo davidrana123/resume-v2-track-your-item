@@ -33,6 +33,7 @@ export default function SignUp() {
     <Box
       component="form"
       sx={{
+        backgroundColor:'white',
         marginTop: '1rem',
         display: 'flex',
         flexDirection: 'column',

@@ -45,6 +45,7 @@ const AllData = () => {
 
   const getAllData = async () => {
     let response = await getRecords();
+    // console.log('response from all recod',response.data)
     setDetails(response.data);
   };
 

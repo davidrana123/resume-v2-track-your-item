@@ -10,6 +10,7 @@ import Auth from "./server/authRouter.js";
 import secureRoutes from './server/secureRoutes.js';
 
 const app = express();
+dotenv.config({ path: "config.env" }); // Load the config.env file
 
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -20,11 +21,8 @@ app.use("/record", Routes);
 app.use("/auth", Auth);
 app.use('/secure', secureRoutes);
 
-const URL =
-  // "mongodb+srv://MERN-STACK:4g8fJ790cyf5CsBV@cluster0.4s7rg.mongodb.net/MERN-STACK";
-  "mongodb+srv://davidrana123:David@cluster0.wbfhmqz.mongodb.net/?retryWrites=true&w=majority";
-
 const PORT = process.env.PORT || "8080";
+const URL = process.env.DATABASE;
 
 mongoose
   .connect(URL, {

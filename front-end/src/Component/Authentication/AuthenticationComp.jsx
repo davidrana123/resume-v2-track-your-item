@@ -7,23 +7,24 @@ import {Authenticated} from '../../Service/auth'
 function AuthenticationComp() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
 
-  useEffect(async() => {
-    try{
-      const res = await Authenticated()
-      if(res.status === 200){
-        setIsAuthenticated(true)
-      }else{
-        setIsAuthenticated(false)
+  useEffect(() => {
+    const checkAuthentication = async () => {
+      try {
+        const res = await Authenticated();
+        setIsAuthenticated(res.status === 200);
+      } catch (error) {
+        console.log(error);
+        setIsAuthenticated(false);
       }
-    }catch(error){
-      console.log(error)
-    }
-  },[])
+    };
+  
+    checkAuthentication();
+  }, []);
 
   return (
     <>
-    <AuthHome />
-    {/* { isAuthenticated ? <AuthHome /> : <Login />  } */}
+    {/* <AuthHome /> */}
+    { isAuthenticated ? <AuthHome /> : <Login />  }
     </>
   )
 }

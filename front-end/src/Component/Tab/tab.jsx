@@ -71,25 +71,25 @@ export default function BasicTabs() {
         scrollButtons
         allowScrollButtonsMobile>
           {/* <Tab style={{ margin:'20px' }} className='space-between' label="DSA Table" {...a11yProps(0)} /> */}
-          <Tab style={{ margin:'20px' }} className='space-between' label="Add Records" {...a11yProps(1)} />
-          <Tab style={{ margin:'20px' }} className='space-between' label="Add Item" {...a11yProps(2)} />
-          <Tab style={{ margin:'20px' }} className='space-between' label="Edit Records" {...a11yProps(3)} />
-          <Tab style={{ margin:'20px' }} className='space-between' label="All Records " {...a11yProps(4)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="Add Records" {...a11yProps(0)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="Add Item" {...a11yProps(1)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="Edit Records" {...a11yProps(2)} />
+          <Tab style={{ margin:'20px' }} className='space-between' label="All Records " {...a11yProps(3)} />
         </Tabs>
       </Box>
       {/* <TabPanel value={value} index={0}>
       <DsaTable /> 
       </TabPanel> */}
-      <TabPanel value={value} index={1} >
+      <TabPanel value={value} index={0} >
         <AddRecords />
       </TabPanel>
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={1}>
         <AddItem />
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={2}>
         <EditRecords />
       </TabPanel>
-      <TabPanel value={value} index={4}>
+      <TabPanel value={value} index={3}>
         <AllRecords />
       </TabPanel>
       </Box>

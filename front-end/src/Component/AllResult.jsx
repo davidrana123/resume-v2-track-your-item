@@ -68,6 +68,7 @@ const AllResult = () => {
 
   const getAllData = async () => {
     let response = await getRecords();
+    // console.log('response from all result',response.data)
     setDetails(response.data);
   };
 

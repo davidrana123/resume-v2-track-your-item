@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button, Typography } from '@mui/material';
@@ -25,6 +25,7 @@ export default function Login() {
     <Box
       component="form"
       sx={{
+        backgroundColor:'white',
         marginTop: '1rem',
         display: 'flex',
         flexDirection: 'column',
