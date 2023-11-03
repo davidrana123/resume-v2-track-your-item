@@ -1,8 +1,11 @@
 import axios from "axios";
 
 // const usersUrl = 'http://localhost:3003/users';
-const usersUrl = "http://localhost:8080/record";
-const ItemUrl = "http://localhost:8080/info";
+// const usersUrl = "http://localhost:8080/record";
+// const ItemUrl = "http://localhost:8080/info";
+
+const usersUrl = "https://backend12-dy8f.onrender.com/record";
+const ItemUrl = "https://backend12-dy8f.onrender.com/info";
 
 export const getRecords = async (id) => {
   id = id || "";
