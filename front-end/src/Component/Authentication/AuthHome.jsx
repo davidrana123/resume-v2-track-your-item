@@ -1,7 +1,7 @@
-import { Button, Box, Typography } from '@mui/material'
+import { Button, Box, Typography, TextField } from '@mui/material'
 import React from 'react'
 import { useHistory } from 'react-router-dom';
-import Counter from '../Redux/Counter';
+import Counter from '../ReduxComponent/Counter';
 
 function AuthHome() {
     let router = useHistory();
@@ -24,10 +24,10 @@ function AuthHome() {
       noValidate
       autoComplete="off"
     >
+    <TextField>Point of FullStack</TextField>
     <Typography variant='h3'>Auth Home</Typography>
     <Counter />
     <Button variant='outlined' onClick={() => clearFun()}>Log-out</Button>
-     
     </Box>
     </>
   )

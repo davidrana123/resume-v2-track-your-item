@@ -1,4 +1,5 @@
-// src/actions/types.js
-export const ADD_ITEM = 'ADD_ITEM';
-export const UPDATE_ITEM = 'UPDATE_ITEM';
-export const DELETE_ITEM = 'DELETE_ITEM';
+export const ADD_COUNTER = 'ADD_COUNTER'
+
+export const MIN_COUNTER = 'MIN_COUNTER'
+
+export const RESET_COUNTER = 'RESET_COUNTER'

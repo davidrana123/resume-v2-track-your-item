@@ -1,17 +1,27 @@
-// src/reducers/itemsReducer.js
-import { createSlice } from '@reduxjs/toolkit';
+import {combineReducers} from 'redux'
+import {initialState} from "../initialState";
+import {ADD_COUNTER, MIN_COUNTER, RESET_COUNTER} from "../actions/types";
 
-const itemsSlice = createSlice({
-  name: 'items',
-  initialState: { items: [] },
-  reducers: {
-    addItem: (state, action) => {
-      state.items.push(action.payload);
-    },
-    // Implement other actions for updating and deleting items here
-  },
-});
+export function counterApp(state = initialState, action) {
+    switch (action.type) {
+        case ADD_COUNTER:
+            return {
+                counter: state.counter + 1
+            }
 
-export const { addItem } = itemsSlice.actions;
+        case MIN_COUNTER:
+            return {
+                counter: state.counter - 1
+            }
+        case RESET_COUNTER:
+            return {counter: 100}
+        default:
+            return state
+    }
 
-export default itemsSlice.reducer;
+    // return state;
+}
+
+const rootReducer = combineReducers({counterApp})
+
+export default rootReducer;

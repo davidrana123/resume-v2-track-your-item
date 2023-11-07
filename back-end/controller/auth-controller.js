@@ -20,15 +20,15 @@ export const loginUser = async(req, res) => {
         const { email, password } = req.body;
         const user = await Data.findOne({ email });
         if(!user){
-            return res.status(401).json({ error: 'Authentication failed' });
+            return res.status(401).json({ error: 'User Authentication failed' });
         }
         const passwordMatch = await bcrypt.compare(password, user.password);
         if(!passwordMatch){
-            return res.status(401).json({ error: 'Authentication failed' })
+            return res.status(401).json({ error: 'Password Authentication failed' })
         }
         const token = jwt.sign({ userId: user._id, email: user.email }, 'secret_key', {expiresIn: '1h'});
         res.status(200).json({ token, userId: user._id });
     }catch(error){
-        res.status(500).json({ error: 'Authentication failed' })
+        res.status(500).json({ error: 'Error Authentication failed' })
     }
 }

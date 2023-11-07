@@ -1,9 +1,9 @@
 import axios from "axios";
-// const Auth = "http://localhost:8080/auth";
-// const secureRoutes = "http://localhost:8080/secure";
+const Auth = "http://localhost:8080/auth";
+const secureRoutes = "http://localhost:8080/secure";
 
-const Auth = "https://backend12-dy8f.onrender.com/auth";
-const secureRoutes = "https://backend12-dy8f.onrender.com/secure";
+// const Auth = "https://backend12-dy8f.onrender.com/auth";
+// const secureRoutes = "https://backend12-dy8f.onrender.com/secure";
 
 export const registerHandler = async (userData) => {
     try {

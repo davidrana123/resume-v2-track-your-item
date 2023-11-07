@@ -1,23 +1,13 @@
-// src/actions/itemActions.js
-import { ADD_ITEM, UPDATE_ITEM, DELETE_ITEM } from './types';
+import {ADD_COUNTER, MIN_COUNTER, RESET_COUNTER} from "./types";
 
-export const addItem = (item) => {
-  return {
-    type: ADD_ITEM,
-    payload: item,
-  };
-};
+export function addCounter(counter) {
+    return {type: ADD_COUNTER, counter}
+}
 
-export const updateItem = (item) => {
-  return {
-    type: UPDATE_ITEM,
-    payload: item,
-  };
-};
+export function minCounter(counter) {
+    return {type: MIN_COUNTER, counter}
+}
 
-export const deleteItem = (itemId) => {
-  return {
-    type: DELETE_ITEM,
-    payload: itemId,
-  };
-};
+export function resetCounter(counter) {
+    return {type: RESET_COUNTER, counter}
+}

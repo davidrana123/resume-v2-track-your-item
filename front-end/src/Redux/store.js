@@ -1,12 +1,10 @@
 // src/store.js
 import { configureStore } from '@reduxjs/toolkit';
-import itemsReducer from './reducers/itemsReducer';
-import counterReducer from './reducers/counterReducer';
+import itemsReducer from './reducers/itemsSlice';
 
 const store = configureStore({
   reducer: {
     items: itemsReducer,
-    counter: counterReducer,
   },
 });
 

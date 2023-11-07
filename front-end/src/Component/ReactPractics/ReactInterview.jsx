@@ -32,7 +32,6 @@ function PaginatedData() {
   };
 
   const lastItemRef = (node) => {
-    console.log('node',node)
     if (loading) return;
     if (observer.current) observer.current.disconnect();
     observer.current = new IntersectionObserver((entries) => {
@@ -44,7 +43,7 @@ function PaginatedData() {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor:'white' }}>
       <ul>
         {data.map((item, index) => {
           if (index === data.length - 1) {

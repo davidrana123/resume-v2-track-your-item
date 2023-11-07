@@ -4,7 +4,12 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from 'react-redux'
-import store from './Redux/store';
+import rootReducer from './Redux/reducers/itemsReducer';
+import {createStore} from 'redux'
+
+const store = createStore(rootReducer,
+  //needed for dev tools
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <Provider store={store}>
