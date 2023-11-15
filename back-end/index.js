@@ -10,6 +10,7 @@ import ItemRouter from "./server/ItemRoute.js";
 import Routes from "./server/route.js";
 import Auth from "./server/authRouter.js";
 import secureRoutes from './server/secureRoutes.js';
+import AppRouter from './server/appRouter.js';
 
 const app = express();
 dotenv.config({ path: "config.env" }); // Load the config.env file
@@ -31,6 +32,7 @@ app.use("/info", ItemRouter);
 app.use("/record", Routes);
 app.use("/auth", Auth);
 app.use('/secure', secureRoutes);
+app.use('/app', AppRouter);
 
 const PORT = process.env.PORT || "8080";
 const URL = process.env.DATABASE;
