@@ -21,6 +21,7 @@ import AuthHome from '../Component/Authentication/AuthHome';
 import SignUp from '../Component/Authentication/SignUp';
 import Login from '../Component/Authentication/Login';
 import ChatApp from '../Page/ChatApp/index';
+import Store from '../Page/Store/index';
 
 function index() {
   return (
@@ -28,6 +29,7 @@ function index() {
     <MuiNavBar  FontFamilyType={'monospace'} />
       <Switch>
         <Route exact path="/" component={LandingPage} />
+        <Route exact path="/storepage" component={Store} />
         <Route exact path="/chatapp" component={ChatApp} />
         <Route exact path="/authHome" component={AuthHome} />
         <Route exact path="/login" component={Login} />

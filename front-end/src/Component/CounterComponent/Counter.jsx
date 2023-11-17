@@ -1,24 +1,33 @@
 import { Button, Typography } from '@material-ui/core';
-import React from 'react'
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {  bindActionCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 import { actionCreators } from '../../State/index';
 
-function Counter() {
-  const state = useSelector(state => state.twentyCount)
+const Counter = () => {
+  const state = useSelector((state) => state.twentyCount);
   const dispatch = useDispatch();
-  // const actions = bindActionCreators(actionCreators, dispatch);
-  // destructer
-  const { incressCounter, decressCounter,incressTwenty,decressTwenty  } = bindActionCreators(actionCreators, dispatch)
-
+  const { incressTwenty, decressTwenty } = bindActionCreators(actionCreators, dispatch);
 
   return (
-    <>
-    <Button onClick={() => incressTwenty(10)}>Add</Button>
-    <Button onClick={() => decressTwenty(10)}>-</Button>
-    <Typography variant='h3'>Result:- {state}</Typography>
-    </>
-  )
-}
+    <div style={{ textAlign: 'center', marginTop: '20px' }}>
+      <Typography variant='h5'>Redux Component</Typography>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => incressTwenty(10)}
+        style={{ marginRight: '10px' }}
+      >
+        +
+      </Button>
+      <Button variant="contained" color="secondary" onClick={() => decressTwenty(10)}>
+        -
+      </Button>
+      <Typography variant="h3" style={{ marginTop: '20px' }}>
+        Result: {state}
+      </Typography>
+    </div>
+  );
+};
 
 export default Counter;
