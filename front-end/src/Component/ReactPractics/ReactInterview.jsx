@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import axios from 'axios';
+import GanttChartComponent from '../GanttChart/GanttChartComponent';
 
 function PaginatedData() {
   const [data, setData] = useState([]);
@@ -44,7 +45,8 @@ function PaginatedData() {
 
   return (
     <div style={{ backgroundColor:'white' }}>
-      <ul>
+      <GanttChartComponent />
+      {/* <ul>
         {data.map((item, index) => {
           if (index === data.length - 1) {
             return (
@@ -57,7 +59,7 @@ function PaginatedData() {
           }
         })}
       </ul>
-      {loading && <p>Loading...</p>}
+      {loading && <p>Loading...</p>} */}
     </div>
   );
 }
