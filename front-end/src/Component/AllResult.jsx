@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 import { getRecords, deleteRecord, addRecords, addItems } from "../Service/api";
 import QRCode from "qrcode";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //new data
 const initialValue = {
   cat: "",
@@ -43,7 +43,7 @@ const AllResult = () => {
   const classes = useStyles();
   const [data, setData] = useState(initialValue);
   const { cat, desc } = data;
-  let history = useHistory();
+  let history = useNavigate();
   console.log(data);
 
   const onValueChange = (e) => {

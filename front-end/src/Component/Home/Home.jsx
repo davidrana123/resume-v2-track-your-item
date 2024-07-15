@@ -1,22 +1,63 @@
 import React from 'react';
-import CommonButton from '../CommanBtn/CommonButton';
-import { useHistory } from 'react-router-dom';
-import '../../Component/Home/HomeStyle.css'
-import Grid from '@mui/material/Grid';
+import { Container, Grid, Card, Typography, Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import './Home.css';
 
 function Home() {
-  let router = useHistory();
+  const navigate = useNavigate();
+
+  const navigateToPage = (path) => {
+    if (path === 'CRUD') {
+      navigate('/crud');
+    } else if (path === 'Chat App') {
+      navigate('/chatapp');
+    } else if (path === 'Auth') {
+      navigate('/authentication');
+    } else {
+      navigate('/track-your-item')
+    }
+  };
+
+  const arr = [
+    { name: 'Chat App', id: '1' },
+    { name: 'Auth', id: '2' },
+    { name: 'CRUD', id: '3' },
+    { name: 'Track Your Itam', id: '4' },
+  ];
 
   return (
-    <div className="center-container">
-       <Grid container
-  direction="row"
-  justifyContent="center"
-  alignItems="center" spacing={2}>
-       <Grid item xs={3}><CommonButton label="App" onClick={() => router.push('/home')} /></Grid>
-       <Grid item xs={3}><CommonButton label="Interview" onClick={() => router.push('/interviewSelection')} /></Grid>
-       </Grid>
-    </div>
+    <Container className="container">
+      <Grid container className="gridContainer" spacing={2}>
+        {arr.map((data, index) => (
+          <Grid item xs={12} sm={6} md={6} key={index}>
+            <Card className="mainCard">
+              <Grid container justifyContent="center">
+                <Grid item xs="auto">
+                  <Typography variant="h4" className="brandHeader" data-test="enroll-patient-copay">
+                    {data.name}
+                  </Typography>
+                </Grid>
+              </Grid>
+              <br />
+              <br />
+              <Grid container justifyContent="center">
+                <Grid item xs="auto">
+                  <Button
+                    id="enroll_btn"
+                    variant="contained"
+                    color="primary"
+                    className="bigButton"
+                    onClick={() => navigateToPage(data.name)}
+                  >
+                    GO
+                  </Button>
+                </Grid>
+              </Grid>
+            </Card>
+          </Grid>
+        ))}
+      </Grid>
+    </Container>
   );
 }
 

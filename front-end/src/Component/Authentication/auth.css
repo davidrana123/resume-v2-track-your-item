@@ -1,0 +1,123 @@
+  
+  .login {
+    width: 34%;
+    margin: auto;
+    margin-top: 4rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    background-color: black; /* Global background color */
+    height: 27rem;
+  }
+  
+  .login-header {
+    color: white; /* White heading */
+  }
+
+  .login-textfield .MuiOutlinedInput-input{
+    color: wheat;
+  }
+  
+  .login-textfield {
+    color: white;
+    & .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+      border-color: white; /* White border for text fields */
+    }
+    
+    & .MuiInputLabel-root {
+      color: white; /* White label */
+    }
+  }
+  
+  .button-container {
+    display: flex; /* Flexbox for horizontal alignment */
+    gap: 1rem; /* Space between buttons */
+  }
+  
+  .login-button {
+    color: white; /* White button text */
+    border-color: white; /* White button border */
+  }
+  
+  .login-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly change background on hover */
+  }
+  
+
+  .signup {
+    width: 34%;
+    margin: auto;
+    margin-top: 4rem;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    background-color: black;
+    height: 30rem;
+  }
+  
+  .signup-header {
+    color: white; /* White heading */
+  }
+
+  .signup-textfield .MuiOutlinedInput-input{
+    color: wheat;
+  }
+  
+  .signup-textfield {
+    & .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+      border-color: white; /* White border for text fields */
+      color: white;
+    }
+  
+    & .MuiInputLabel-root {
+      color: white; /* White label */
+    }
+  }
+  
+  .button-container {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem; /* Space between buttons */
+  }
+  
+  .signup-button {
+    color: white; /* White button text */
+    border-color: white; /* White button border */
+  }
+  
+  .signup-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly change background on hover */
+  }
+
+  .auth-home-form {
+    margin: auto;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    background-color: black;
+    width: 34%;
+    height: 30rem;
+  }
+  
+  .white-text {
+    color: white; /* White text */
+  }
+  
+  .white-button {
+    color: white; /* White button text */
+    border-color: white; /* White button border */
+  }
+  
+  .white-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly change background on hover */
+  }
+  
+  .countdown-text {
+    color: red; /* Red text for countdown */
+  }

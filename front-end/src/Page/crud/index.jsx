@@ -1,8 +1,11 @@
 import React from 'react'
+import Table from '../../Component/CRUDComponent/table';
 
 function index() {
   return (
-    <div>index</div>
+   <>
+    <Table />
+   </>
   )
 }
 

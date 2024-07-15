@@ -1,20 +1,28 @@
 import React, {useState, useEffect} from 'react'
-import Login from './Login';
+  import Login from './Login';
 import SignUp from './SignUp';
 import AuthHome from './AuthHome';
 import {Authenticated} from '../../Service/auth'
+import { useNavigate } from 'react-router-dom';
 
 function AuthenticationComp() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false)
+  let router = useNavigate();
 
   useEffect(() => {
+    console.log('i am running')
     const checkAuthentication = async () => {
       try {
         const res = await Authenticated();
-        setIsAuthenticated(res.status === 200);
+        console.log('res',res)
+        // if(localStorage.getItem('token') === res)
+        router('/authHome')
+        console.log('res.data.expiresIn', res.data.expiresIn)
+        if(res.status === 200){
+          router('/authHome')
+        }
       } catch (error) {
-        console.log(error);
-        setIsAuthenticated(false);
+        router('/login')
+        console.log('----',error);
       }
     };
   
@@ -24,7 +32,7 @@ function AuthenticationComp() {
   return (
     <>
     {/* <AuthHome /> */}
-    { isAuthenticated ? <AuthHome /> : <Login />  }
+    {/* { isAuthenticated ? <AuthHome /> : <Login />  } */}
     </>
   )
 }

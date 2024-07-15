@@ -8,7 +8,7 @@ import {
   makeStyles,
   Typography,
 } from "@material-ui/core";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { getRecords, editRecords } from "../Service/api";
 
 const initialValue = {
@@ -31,7 +31,7 @@ const EditData = () => {
   const { cat, desc } = detail;
   const { id } = useParams();
   const classes = useStyles();
-  let history = useHistory();
+  let history = useNavigate();
 
   useEffect(() => {
     loadObjectDetails();

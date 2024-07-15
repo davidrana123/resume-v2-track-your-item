@@ -1,0 +1,77 @@
+/* Chatapp.css */  
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    height: 100vh;
+    background-color: black;
+  }
+  
+  .chat-header {
+    color: white;
+  }
+  
+  .messages {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin: 20px 0;
+  }
+  
+  .message {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    text-align: center;
+  }
+  
+  .my-message {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+  }
+  
+  .other-message {
+    background-color: #f8d7da;
+    align-self: flex-start;
+  }
+  
+  .message h3 {
+    margin: 0;
+  }
+  
+  .message p {
+    margin: 5px 0 0 0;
+  }
+  
+  .text-input-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .text-input-container .MuiTextField-root {
+    margin-right: 10px;
+  }
+  
+  .text-input-container .MuiButton-contained {
+    background-color: white;
+  }
+  
+
+  .chat-textfield .MuiOutlinedInput-input{
+    color: wheat;
+  }
+  
+  .chat-textfield {
+    color: white;
+    & .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+      border-color: white; /* White border for text fields */
+    }
+    
+    & .MuiInputLabel-root {
+      color: white; /* White label */
+    }
+  }

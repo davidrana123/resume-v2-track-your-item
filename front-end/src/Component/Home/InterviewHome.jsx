@@ -1,11 +1,11 @@
 import React from 'react';
 import CommonButton from '../CommanBtn/CommonButton';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './InterviewHome.css';
 import Grid from '@mui/material/Grid';
 
 function InterviewHome() {
-  let router = useHistory();
+  let router = useNavigate();
   return (
     <div >
        <Grid container

@@ -1,5 +1,5 @@
-import React from 'react'
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AddRecords from "../Component/AllRecords";
 import Records from "../Component/AddRecords";
 import EditRecords from "../Component/EditRecords";
@@ -7,8 +7,7 @@ import RecordList from "../Component/RecordList";
 import AddItem from "../Component/AddItem";
 import AllResult from "../Component/AllResult";
 import ScanQR from "../Component/ScanQR";
-// import NavBar from "../Layouts/NavBar/NavBar";
-import MuiNavBar from '../Layouts/NavBar/index';
+import ResponsiveAppBar from '../Layouts/NavBar/index';
 import Home from '../Page/Home/index';
 import oldversion1 from '../Page/OldVersion/oldversion1';
 import LandingPage from '../Component/Home/Home';
@@ -22,35 +21,43 @@ import SignUp from '../Component/Authentication/SignUp';
 import Login from '../Component/Authentication/Login';
 import ChatApp from '../Page/ChatApp/index';
 import Store from '../Page/Store/index';
+import CRUD from '../Page/crud/index';
+import Footer from '../Page/Footer';
 
-function index() {
+function Index() {
   return (
     <BrowserRouter>
-    <MuiNavBar  FontFamilyType={'monospace'} />
-      <Switch>
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/storepage" component={Store} />
-        <Route exact path="/chatapp" component={ChatApp} />
-        <Route exact path="/authHome" component={AuthHome} />
-        <Route exact path="/login" component={Login} />
-        <Route exact path="/signup" component={SignUp} />
-        <Route exact path="/interviewSelection" component={InterviewHome} />
-        <Route exact path="/classComponent" component={ClassComponent} />
-        <Route exact path="/authentication" component={Authentication} />
-        <Route exact path="/reactInterview" component={ReactInterview} />
-        <Route exact path="/dsaTable" component={DsaTable} />
-        <Route exact path="/home" component={Home} />
-        <Route exact path="/addRecords" component={AddRecords} />
-        <Route exact path="/add" component={Records} />
-        <Route exact path="/list" component={RecordList} />
-        <Route exact path="/item" component={AddItem} />
-        <Route exact path="/result" component={AllResult} />
-        <Route exact path="/scan" component={ScanQR} />
-        <Route exact path="/edit/:id" component={EditRecords} />
-        <Route exact path="/oldversion1" component={oldversion1} />
-      </Switch>
+      <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+        <ResponsiveAppBar FontFamilyType="monospace" />
+        <div style={{ flex: 1, paddingTop: '64px' }}> {/* Adjust paddingTop to match AppBar height */}
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/storepage" element={<Store />} />
+            <Route path="/chatapp" element={<ChatApp />} />
+            <Route path="/authHome" element={<AuthHome />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/interviewSelection" element={<InterviewHome />} />
+            <Route path="/classComponent" element={<ClassComponent />} />
+            <Route path="/authentication" element={<Authentication />} />
+            <Route path="/reactInterview" element={<ReactInterview />} />
+            <Route path="/dsaTable" element={<DsaTable />} />
+            <Route path="/track-your-item" element={<Home />} />
+            <Route path="/addRecords" element={<AddRecords />} />
+            <Route path="/add" element={<Records />} />
+            <Route path="/list" element={<RecordList />} />
+            <Route path="/item" element={<AddItem />} />
+            <Route path="/result" element={<AllResult />} />
+            <Route path="/scan" element={<ScanQR />} />
+            <Route path="/edit/:id" element={<EditRecords />} />
+            <Route path="/oldversion1" element={<oldversion1 />} />
+            <Route path="/crud" element={<CRUD />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </BrowserRouter>
-  )
+  );
 }
 
-export default index
+export default Index;

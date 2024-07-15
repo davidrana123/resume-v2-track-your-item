@@ -11,7 +11,7 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import { addRecords } from "../Service/api";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const initialValue = {
   cat: "",
@@ -32,7 +32,7 @@ const AddData = () => {
   const [data, setData] = useState(initialValue);
   const { cat, desc } = data;
   const classes = useStyles();
-  let history = useHistory();
+  let history = useNavigate();
 
   const onValueChange = (e) => {
     console.log(e.target.value);

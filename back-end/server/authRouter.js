@@ -3,6 +3,7 @@ import {
     registerUser,
     loginUser
 } from "../controller/auth-controller.js";
+import {checkAuth} from '../middleware/check-auth.js';
 
 const router = express.Router();
 

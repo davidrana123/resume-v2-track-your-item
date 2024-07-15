@@ -1,0 +1,23 @@
+/* crud.css */
+.container {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    margin-top: 1rem;
+  }
+  
+  .table-container {
+    height: 500px;
+    width: 95%;
+    background-color: wheat;
+  }
+  
+  .actions {
+    color: var(--text-secondary);
+  }
+  
+  .textPrimary {
+    color: var(--text-primary);
+  }
+  

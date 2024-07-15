@@ -1,13 +1,13 @@
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const divStyle = {margin: 'auto', position:'absolute', top:'20%', left:'25%'}
 const btnstyle = {width:'10rem' , height:'4rem', borderRadius: '10px',}
 
 function ButtonCom() {
-    const history = useHistory();
+    const history = useNavigate();
     const navigateFunction = (location) => {
         if(location === 'create-record'){
             history.push('/add')

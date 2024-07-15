@@ -1,0 +1,44 @@
+/* Home.css */
+
+.container {
+    /* background-color: black; */
+    border-radius: 1rem;
+    padding: 16px;
+    height: 33rem !important;
+    border-radius: 1rem;
+  }
+  
+  .mainCard {
+    border-radius: 16px;
+    padding: 32px;
+    margin: 16px;
+    background-color: #d7d583 !important;
+    color: white !important;
+    border-radius: 2rem !important;
+  }
+  
+  .bigButton {
+    background-color: #32005f;
+    color: white;
+    padding: 12px 48px;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: none;
+    font-family: 'Open Sans';
+    width: 9rem;
+    height: 4rem;
+    border-radius: 2rem !important;
+  }
+  
+  .bigButton:hover {
+    background-color: #4f1e85;
+  }
+  
+  .brandHeader {
+    text-align: center;
+  }
+  
+  .gridContainer {
+    justify-content: center;
+  }
+  

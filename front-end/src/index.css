@@ -1,20 +1,27 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* background-color: #3FEEE6; */
-  margin: 0;
-  padding: 0;
-  background-image: url('Static/bg-img.jpg'); /* Replace with the actual path to your background image */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* This makes the background image fixed */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* Root variables */
+:root {
+    --color-primary: #64b5f6;
+    --color-primaryLight: #4ca3d8;
+    --color-secondary: #003c60;
+    --color-secondaryBright: #23759e;
+    --color-accent: #c41230;
+    --color-neutralLight: #d9d9d9;
+    --color-neutralBright: #fdfdfd;
+    --color-success: #009245;
+    --color-brandGrey: #333333;
+    --color-active: #59a2c1;
+
+    --color-mainBackground: #fafafa;
+    --color-headerBackground: #fafafa;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('Static/bg-img.jpg'); /* Replace with the actual path to your background image */
 }

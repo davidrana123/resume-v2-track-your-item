@@ -1,0 +1,18 @@
+.footer {
+    background-color: #32005f;
+    color: white;
+    height: 12rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logoSection {
+    text-align: center;
+  }
+  
+  .footerLogo {
+    max-height: 6rem;
+    margin-bottom: 0.5rem;
+  }
+  
