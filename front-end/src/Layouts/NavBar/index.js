@@ -28,7 +28,7 @@ function ResponsiveAppBar({ FontFamilyType }) {
     <AppBar position="fixed" color="secondary">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <EmojiEmotionsIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <EmojiEmotionsIcon sx={{ mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -36,7 +36,7 @@ function ResponsiveAppBar({ FontFamilyType }) {
             to="/"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              display: { md: 'flex' },
               fontFamily: { FontFamilyType },
               fontWeight: 700,
               letterSpacing: '.3rem',
@@ -47,7 +47,7 @@ function ResponsiveAppBar({ FontFamilyType }) {
             Track Your Item
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -82,7 +82,7 @@ function ResponsiveAppBar({ FontFamilyType }) {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> */}
         </Toolbar>
       </Container>
     </AppBar>
