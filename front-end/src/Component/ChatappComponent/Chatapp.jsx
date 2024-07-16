@@ -1,32 +1,59 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
-import { nanoid } from 'nanoid';
 import { url } from '../../Service/chatAppService';
 import { Button, TextField } from '@material-ui/core';
 import './Chatapp.css'; // Ensure this file is used for styling
 
 function Chatapp() {
   const socket = io.connect(url);
-  const userName = nanoid(4);
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
+  const [userName, setUserName] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
+    // Set up socket listener
     socket.on('message', (data) => {
-      setMessages([...messages, data]);
+      setMessages((prevMessages) => [...prevMessages, data]);
     });
-  }, [messages]);
+
+    // Clean up the listener on unmount
+    return () => {
+      socket.off('message');
+    };
+  }, [socket]); // Empty dependency array ensures this runs once
+
+  const handleLogin = () => {
+    if (userName.trim()) {
+      setIsLoggedIn(true);
+    }
+  };
 
   const sendMessage = () => {
-    if (message) {
+    if (message.trim()) {
       socket.emit('message', { message, userName });
       setMessage('');
     }
   };
 
-  const textFieldHandling = (e) => {
-    setMessage({ ...message, [e.target.name]: e.target.value });
-  };
+  if (!isLoggedIn) {
+    return (
+      <div className="login-container">
+        <h1>Enter your name to start chatting</h1>
+        <TextField
+          className='chat-textfield'
+          variant="outlined"
+          color="secondary"
+          name="userName"
+          type="text"
+          value={userName}
+          onChange={(e) => setUserName(e.target.value)}
+          placeholder="Your Name"
+        />
+        <Button variant="contained" onClick={handleLogin}>Login</Button>
+      </div>
+    );
+  }
 
   return (
     <div className="chat-container">

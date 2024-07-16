@@ -1,77 +1,100 @@
 /* Chatapp.css */  
-  .chat-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-    height: 100vh;
-    background-color: black;
-  }
-  
-  .chat-header {
-    color: white;
-  }
-  
-  .messages {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    margin: 20px 0;
-  }
-  
-  .message {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-    width: 80%;
-    text-align: center;
-  }
-  
-  .my-message {
-    background-color: #d1e7dd;
-    align-self: flex-end;
-  }
-  
-  .other-message {
-    background-color: #f8d7da;
-    align-self: flex-start;
-  }
-  
-  .message h3 {
-    margin: 0;
-  }
-  
-  .message p {
-    margin: 5px 0 0 0;
-  }
-  
-  .text-input-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .text-input-container .MuiTextField-root {
-    margin-right: 10px;
-  }
-  
-  .text-input-container .MuiButton-contained {
-    background-color: white;
-  }
-  
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+}
 
-  .chat-textfield .MuiOutlinedInput-input{
-    color: wheat;
-  }
-  
-  .chat-textfield {
-    color: white;
-    & .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-      border-color: white; /* White border for text fields */
-    }
-    
-    & .MuiInputLabel-root {
-      color: white; /* White label */
-    }
-  }
+.chat-header {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.messages {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 20px 0;
+  overflow-y: auto;
+  height: 60vh;
+}
+
+.message {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 80%;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.my-message {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+}
+
+.other-message {
+  background-color: #f8d7da;
+  align-self: flex-start;
+}
+
+.message h3 {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.message p {
+  margin: 5px 0 0 0;
+  font-size: 0.8rem;
+}
+
+.text-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.text-input-container .MuiTextField-root {
+  margin-right: 10px;
+}
+
+.text-input-container .MuiButton-contained {
+  background-color: white;
+}
+
+.chat-textfield .MuiOutlinedInput-input {
+  color: wheat;
+}
+
+.chat-textfield {
+  color: white;
+}
+
+.chat-textfield .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: white; /* White border for text fields */
+}
+
+.chat-textfield .MuiInputLabel-root {
+  color: white; /* White label */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  color: white;
+}
+
+.login-container .MuiTextField-root {
+  margin-bottom: 10px;
+}
+
+.login-container .MuiButton-contained {
+  background-color: white;
+}
